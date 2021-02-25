@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tu Poke-Dex Personal!</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script defer src="/scripts/index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4f2d0ae736.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="/main.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <section class="header">
+      <div class="header--container">
+        <nav class="main-nav">
+          <input
+            type="text"
+            class="main-nav--searcher"
+            id="search_q"
+            placeholder="Busca Tu Pokemón Favorito!"
+          />
+            <button class="btn-search" id="search-btn">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>          
+          <div id="show_error" class="hidden hidden_bar" role="alert">
+              <span class="sr-only">Close</span>
+            </button> 
+            <strong>Que raro!</strong> No Conocemos Ese Pokemon! Intenta De Nuevo! :(
+          </div>
+        </nav>
+        <img src="/images/Draseart-Dumper-PokeBall.ico" alt="pokemon icon" />
+      </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-container">
+        <h2 class="hero-container--name" id="update_name">Golduck</h2>
+        <h3 class="hero-container--number" id="update_game-index">N° 055</h3>
+        <div class="hero-container_img-description" id="img-description">
+          <img
+            class="hero-container--img"
+            id="update_img"
+            src="/images/golduck.png"
+            alt="pokemon-image"
+          />
+          <div class="hero-container-3">
+            <h3 class="hero-container-3--data">Altura</h3>
+            <p class="hero-container-3--data" id="update_height">1.7m</p>
+            <h3 class="hero-container-3--data">Peso</h3>
+            <p class="hero-container-3--data" id="update_weight">76,6kg</p>
+            <h3 class="hero-container-3--data">Habilidad</h3>
+            <p class="hero-container-3--data" id="update_ability">Humedad</p>
+            <h3 class="hero-container-3--data">TIPO</h3>
+            <p class="hero-container-3--data" id="update_type">Agua / Psíquico</p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
