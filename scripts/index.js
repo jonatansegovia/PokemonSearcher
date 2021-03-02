@@ -7,13 +7,13 @@ search_term.addEventListener('keyup', (event) => {
   }
 });
 
-const updateImg = document.getElementById('update_img');
-const updateName = document.getElementById('update_name');
-const updateType = document.getElementById('update_type');
-const updateWeight = document.getElementById('update_weight');
-const updateHeight = document.getElementById('update_height');
-const updateAbility = document.getElementById('update_ability');
-const updateGameIndex = document.getElementById('update_game-index');
+const UPDATE_IMG = document.getElementById('img');
+const UPDATE_NAME = document.getElementById('name');
+const UPDATE_TYPE = document.getElementById('type');
+const UPDATE_WEIGHT = document.getElementById('weight');
+const UPDATE_HEIGHT = document.getElementById('height');
+const UPDATE_ABILITY = document.getElementById('ability');
+const UPDATE_GAME_INDEX = document.getElementById('game-index');
 
 const getPokemonData = async (term) => {
   document.getElementById('show_error').classList.remove('show');
@@ -21,8 +21,8 @@ const getPokemonData = async (term) => {
 
   const cleanTerm = term.toLowerCase().trim();
   if (cleanTerm) {
-    const url = `https://pokeapi.co/api/v2/pokemon/${cleanTerm}`; //url de donde obtengo mis datos, query refiere a un dato que le voy a pasar cuando escriba en la search bar
-    const response = await fetch(url); //await le dice que espere la respuesta antes de continuar con otra cosa, dentro le paso la variable "url", para que espere esta respuesta desde ahí
+    const url = `https://pokeapi.co/api/v2/pokemon/${cleanTerm}`;
+    const response = await fetch(url);
 
     if (response.status == 404 || response.statusText == 'Not Found') {
       document.getElementById('show_error').classList.add('show');
@@ -30,7 +30,7 @@ const getPokemonData = async (term) => {
       return;
     }
 
-    const pokemon = await response.json(); //aquí se almacena toda la info que luego voy a poner en mi página
+    const pokemon = await response.json();
     updateData(pokemon);
   }
 };
@@ -40,25 +40,25 @@ const capitalize = (word) => {
 };
 
 const updateData = (pokemon) => {
-  updateImg.setAttribute(
+  UPDATE_IMG.setAttribute(
     'src',
-    pokemon.sprites.other.dream_world.front_default
+    pokemon.sprites.other['official-artwork'].front_default
   );
 
-  updateName.innerHTML = capitalize(pokemon.name);
-  updateType.innerHTML = capitalize(pokemon.types[0].type.name);
-  updateWeight.innerHTML = `${pokemon.weight / 8}kg`;
+  UPDATE_NAME.innerHTML = capitalize(pokemon.name);
+  UPDATE_TYPE.innerHTML = capitalize(pokemon.types[0].type.name);
+  UPDATE_WEIGHT.innerHTML = `${pokemon.weight / 8}kg`;
 
   if (pokemon.height >= 10) {
     const meters = pokemon.height / 10;
-    updateHeight.innerHTML = `${meters} m`;
+    UPDATE_HEIGHT.innerHTML = `${meters} m`;
   } else {
     const centimeters = pokemon.height * 10;
-    updateHeight.innerHTML = `${centimeters} cm`;
+    UPDATE_HEIGHT.innerHTML = `${centimeters} cm`;
   }
 
-  updateAbility.innerHTML = capitalize(pokemon.abilities[0].ability.name);
-  updateGameIndex.innerHTML = `N° ${pokemon.game_indices[3].game_index}`;
+  UPDATE_ABILITY.innerHTML = capitalize(pokemon.abilities[0].ability.name);
+  UPDATE_GAME_INDEX.innerHTML = `N° ${pokemon.game_indices[3].game_index}`;
 };
 
 search_btn.addEventListener('click', () => getPokemonData(search_term.value));

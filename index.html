@@ -31,11 +31,11 @@
   <body>
     <!-- Header Section -->
     <section class="header">
-      <div class="header--container">
-        <nav class="main-nav">
+      <div class="header__container">
+        <nav class="header__container-nav">
           <input
             type="text"
-            class="main-nav--searcher"
+            class="nav__searcher"
             id="search_q"
             placeholder="Busca Tu Pokemón Favorito!"
           />
@@ -48,35 +48,38 @@
             <strong>Que raro!</strong> No Conocemos Ese Pokemon! Intenta De Nuevo! :(
           </div>
         </nav>
-        <img src="/images/Draseart-Dumper-PokeBall.ico" alt="pokemon icon" />
+        <img class="header__icon" src="/images/Draseart-Dumper-PokeBall.ico" alt="pokemon icon" />
       </div>
     </section>
 
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-container">
-        <h2 class="hero-container--name" id="update_name"></h2>
-        <h3 class="hero-container--number" id="update_game-index"></h3>
+        <h2 class="hero-container--name" id="name"></h2>
+        <h3 class="hero-container--number" id="game-index"></h3>
         <div class="hero-container_img-description" id="img-description">
           <img
             class="hero-container--img"
-            id="update_img"
+            id="img"
             src=""
             alt="pokemon-image"
           />
           <div class="hero-container-3">
             <h3 class="hero-container-3--data">Altura</h3>
-            <p class="hero-container-3--data" id="update_height"></p>
+            <p class="hero-container-3--data" id="height"></p>
             <h3 class="hero-container-3--data">Peso</h3>
-            <p class="hero-container-3--data" id="update_weight"></p>
+            <p class="hero-container-3--data" id="weight"></p>
             <h3 class="hero-container-3--data">Habilidad</h3>
-            <p class="hero-container-3--data" id="update_ability">Humedad</p>
+            <p class="hero-container-3--data" id="ability">Humedad</p>
             <h3 class="hero-container-3--data">TIPO</h3>
-            <p class="hero-container-3--data" id="update_type"></p>
+            <p class="hero-container-3--data" id="type"></p>
 
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">&copy; 2021 | Segovia Jonatan</footer>
   </body>
 </html>
